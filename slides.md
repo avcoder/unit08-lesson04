@@ -17,11 +17,11 @@ mdc: true
 ---
 
 # React Native
-Mobile Development: Unit 08 - Lesson 01
+Mobile Development: Unit 08 - Lesson 04
 
-- [ ] Aspects to Consider when Designing for Mobile
-- [ ] MacOS vs Android
-- [ ] Install Expo Go App on your phone
+- [ ] Timer, Countdowns
+- [ ] Activity Indicator 
+- [ ] History, Confetti
 
 <div class="abs-br m-6 text-xl">
   <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
@@ -79,7 +79,6 @@ layout: two-cols
 
 ::right::
 
-<img src="/assets/rn1.jpeg" style="height: 500px; margin: 0 auto">
 
 ---
 transition: slide-left
@@ -398,7 +397,6 @@ transition: slide-left
 - When you first ran `npm start` look for options for "open Android" or "open iOS simulator"
 - Try pressing `a` for Android or `i` for iOS Simulator
 
-<img src="/assets/ios.png" style="height: 400px; margin: 0 auto" >
 
 ---
 transition: slide-left
