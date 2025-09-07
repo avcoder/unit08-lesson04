@@ -36,8 +36,20 @@ Mobile Development: Unit 08 - Lesson 04
 transition: slide-left
 ---
 
-# As
-- Take 5 m
+# Recap
+- The reason our notification didn't work last time was we forgot [one thing](https://unit08-lesson03.netlify.app/22):
+   ```tsx
+   if (result === "granted") {
+         Notifications.setNotificationHandler({
+         handleNotification: async () => ({
+            shouldShowBanner: true,
+            shouldShowList: true,
+            shouldPlaySound: true,
+            shouldSetBadge: false,
+         }),
+         });
+   ```
+- see updated repo: https://github.com/avcoder/mobile-react-native-01
 
 ---
 layout: image-right
