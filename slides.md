@@ -50,12 +50,14 @@ transition: slide-left
          });
    ```
 - see updated repo: https://github.com/avcoder/mobile-react-native-01
+   - I changed folder structure due to anything you put in app folder will show up in tabs
+   - I changed tsconfig so that the `@` symbol can be used in import paths where `@` = `src/`
 
 ---
 layout: image-right
 transition: slide-left
-image: /assets/rn.png
-backgroundSize: 444px 380px
+image: /assets/dan.png
+backgroundSize: 444px 300px
 class: text-left
 ---
 
@@ -64,6 +66,7 @@ class: text-left
 🍦 Cool Tips, Trends and Resources:
 - 🪏 [Why we ditched Next.js](https://northflank.com/blog/why-we-ditched-next-js-and-never-looked-back)
 - ⚡ [content-visibility: auto](https://cekrem.github.io/posts/content-visibility-auto-performance/)
+- 🎭 [React for Two Computers](https://www.youtube.com/watch?v=ozI4V_29fj4)
 - ⚛️ [JSX Over the Wire = RSC](https://overreacted.io/jsx-over-the-wire/)
 - 🍎 [new MAC setup](https://www.swyx.io/new-mac-setup)
 
