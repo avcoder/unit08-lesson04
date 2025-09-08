@@ -59,8 +59,56 @@ transition: slide-left
 
 # Countdown Timer
 
+- in `counter/index.tsx`
+   ```tsx
+   export default function CounterScreen() {
+      const [secondsElapsed, setSecondsElapsed] = useState(0);
 
+      useEffect(() => {
+         const intervalId = setInterval(() => {
+            setSecondsElapsed((val) => val + 1);
+         }, 1000);
+         
+         return () => {
+            clearInterval(intervalId);
+         };
+      }, []);
+   ...
+   <Text>{secondsElapsed}</Text>
+   ```
+- Try it, does the timer work so far?
 
+---
+transition: slide-left
+---
+
+# Install date-fns
+
+- `npx expo install date-fns`
+- create new file: `components/TimeSegment.tsx`
+   ```tsx
+   import { Text, View, StyleSheet, TextStyle } from "react-native";
+
+   type Props = {
+      number: number;
+      unit: string;
+      textStyle?: TextStyle;
+   };
+
+   export function TimeSegment({ number, unit, textStyle }: Props) {
+      return (
+         <View style={styles.segmentContainer}>
+            <Text style={[styles.number, textStyle]}>{number}</Text>
+            <Text style={textStyle}>{unit}</Text>
+         </View>
+      );
+   }
+
+   const styles = StyleSheet.create({
+      segmentContainer: {}, // fill in whatever styles you want
+      number: {},
+   });
+   ```
 
 ---
 layout: image-right
