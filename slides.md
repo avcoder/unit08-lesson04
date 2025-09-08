@@ -86,10 +86,9 @@ transition: slide-left
 # Install date-fns
 
 - `npx expo install date-fns`
-- create new file: `components/TimeSegment.tsx`
    ```tsx
    import { Text, View, StyleSheet, TextStyle } from "react-native";
-
+                              // create this in new file: `components/TimeSegment.tsx`
    type Props = {
       number: number;
       unit: string;
