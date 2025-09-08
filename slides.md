@@ -47,11 +47,20 @@ transition: slide-left
             shouldPlaySound: true,
             shouldSetBadge: false,
          }),
-         });
+      });
    ```
 - see updated repo: https://github.com/avcoder/mobile-react-native-01
    - I changed folder structure due to anything you put in app folder will show up in tabs
    - I changed tsconfig so that the `@` symbol can be used in import paths where `@` = `src/`
+
+---
+transition: slide-left
+---
+
+# Countdown Timer
+
+
+
 
 ---
 layout: image-right
