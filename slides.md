@@ -77,6 +77,7 @@ transition: slide-left
    <Text>{secondsElapsed}</Text>
    ```
 - Try it, does the timer work so far?
+- fyi: `npx expo install <package-name>` installs the correct version of the package that is compatible with your Expo SDK version
 
 ---
 transition: slide-left
