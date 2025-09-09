@@ -112,6 +112,9 @@ const date = new Date();       // current date/time
 console.log(date.toISOString());     // "2025-09-08T15:00:00.000Z"
 console.log(date.toLocaleString());  // '9/8/2025, 9:12:41 PM'
 ```
+
+- History of [Date() API](https://www.youtube.com/watch?v=cZTp2MaxcJg#t=5m30s)
+
 ---
 transition: slide-left
 ---
