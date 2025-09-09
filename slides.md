@@ -92,7 +92,7 @@ transition: slide-left
    type Props = {
       number: number;
       unit: string;
-      textStyle?: TextStyle;
+      textStyle?: TextStyle; // ensures we're not using invalid styles
    };
 
    export function TimeSegment({ number, unit, textStyle }: Props) {
@@ -109,6 +109,58 @@ transition: slide-left
       number: {},
    });
    ```
+
+---
+transition: slide-left
+---
+
+# Counter (pg.1)
+
+- in `/counter/index.tsx`
+- remove any `secondsElapsed` code
+```tsx
+import { type Duration } from "date-fns";
+...
+// 5 seconds from now
+const timestamp = Date.now() + (5 * 1000);
+
+type CountdownStatus = {
+  isOverdue: boolean;
+  distance: Duration;
+};
+...
+const [status, setStatus] = useState<CountdownStatus>({
+    isOverdue: false,
+    distance: {},
+});
+```
+
+---
+transition: slide-left
+---
+
+# Counter (pg.2)
+
+```tsx
+import { ... intervalToDuration, isBefore, } from "date-fns";
+...
+useEffect(() => {
+     const intervalId = setInterval(() => {
+      // is the timestamp before right now?  trying to determine if we are dueTime occurred
+      const isOverdue = isBefore(timestamp, Date.now());
+
+      // calculate number of seconds to dueTime or from dueTime
+      const distance = intervalToDuration(
+        isOverdue
+          ? { start: timestamp, end: Date.now() }
+          : { start: Date.now(), end: timestamp },
+      );
+
+      setStatus({ isOverdue, distance });
+     }, 1000);
+```
+
+- after our useState, run `console.log(status)` - does our countdown timer work?
 
 ---
 layout: image-right
