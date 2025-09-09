@@ -126,7 +126,7 @@ const timestamp = Date.now() + (5 * 1000);
 
 type CountdownStatus = {
   isOverdue: boolean;
-  distance: Duration; // take a peak at the TS definition for this
+  distance: Duration; 
 };
 ...
 const [status, setStatus] = useState<CountdownStatus>({
@@ -134,6 +134,7 @@ const [status, setStatus] = useState<CountdownStatus>({
     distance: {},
 });
 ```
+- take a peak at the TS definition for `Duration`
 
 ---
 transition: slide-left
