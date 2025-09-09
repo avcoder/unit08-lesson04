@@ -263,8 +263,25 @@ transition: slide-left
 react-native-confetti-cannon
 
 - https://www.npmjs.com/package/react-native-confetti-cannon
-- Exercise: Install it and use it to make confetti appear
 
+```tsx
+import { ... Dimensions } from "react-native";
+import { ... useRef } from "react";
+import ConfettiCannon from "react-native-confetti-cannon";
+
+export default function CounterScreen() {
+   const confettiRef = useRef<any>();
+...
+confettiRef?.current?.start(); // run this perhaps in an onPress handler somewhere
+...
+<ConfettiCannon
+  ref={confettiRef}
+  count={50}
+  origin={{ x: Dimensions.get("window").width / 2, y: -30 }}
+  autoStart={false}
+  fadeOut={true}
+/>
+```
 ---
 transition: slide-left
 ---
@@ -276,6 +293,25 @@ transition: slide-left
 ---
 
 # Compass / Orientation / Sensors / Count your steps
+
+- `expo install expo-sensors`
+```tsx
+import { Accelerometer } from 'expo-sensors';
+import { useEffect, useState } from 'react';
+
+const useAccelerometer = () => {
+  const [data, setData] = useState({ x: 0, y: 0, z: 0 });
+
+  useEffect(() => {
+    Accelerometer.setUpdateInterval(100);
+    const subscription = Accelerometer.addListener(setData);
+
+    return () => subscription.remove();
+  }, []);
+
+  return data;
+};
+```
 
 ---
 transition: slide-left
