@@ -170,7 +170,7 @@ transition: slide-left
 # Exercise: Counter (pg.3)
 
 - Now that we have the logic built for our countdown timer, Build a UI for it so it uses our `TimeSegment` component to display the Seconds left via `status.distance?.seconds`
-- change styles if overdue
+- change font-color and background-color styles if overdue
 - Re-use the TimeSegment component to additionally display the:
    - minutes left
    - hours left
