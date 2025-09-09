@@ -114,6 +114,38 @@ transition: slide-left
 transition: slide-left
 ---
 
+# Common ways to calculate time in milliseconds
+
+```js
+const oneSecond = 1 * 1000;
+const oneMinute = 60 * 1000;
+const oneHour = 60 * 60 * 1000;
+const oneDay = 24 * 60 * 60 * 1000;
+```
+
+- Measure elapsed time:
+```ts
+const start = Date.now(); // get current timestamp
+
+// Do something...
+setTimeout(() => {
+  const end = Date.now();
+  const elapsed = end - start; // in milliseconds
+  console.log(`Elapsed time: ${elapsed} ms`);
+}, 500);
+```
+
+- Human readable times
+```ts
+const date = new Date();       // current date/time
+console.log(date.toISOString());     // "2025-09-08T15:00:00.000Z"
+console.log(date.toLocaleString());  // '9/8/2025, 9:12:41 PM'
+```
+
+---
+transition: slide-left
+---
+
 # Counter (pg.1)
 
 - in `/counter/index.tsx`
@@ -188,6 +220,13 @@ transition: slide-left
      textStyle={status.isOverdue ? styles.whiteText : undefined}
    />
 ```
+
+---
+transition: slide-left
+---
+
+# Persisting Countdown State
+
 
 ---
 layout: image-right
