@@ -256,7 +256,7 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Persisting Countdown State
+# Confetti
 
 
 ---
