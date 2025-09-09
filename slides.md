@@ -163,6 +163,32 @@ useEffect(() => {
 - after our useState, run `console.log(status)` - does our countdown timer work?
 
 ---
+transition: slide-left
+---
+
+# Exercise: Counter (pg.3)
+
+- Now that we have the logic built for our countdown timer, Build a UI for it so it uses our `TimeSegment` component to display the Seconds left
+   - Re-use the TimeSegment component to additionally display the:
+      - minutes left
+      - hours left
+      - days left
+
+```tsx
+{!status.isOverdue ? (
+   <Text style={[styles.heading]}>Thing due in</Text>
+) : (
+   <Text style={[styles.heading, styles.whiteText]}>Thing overdue by</Text>
+)}
+...
+   <TimeSegment
+     unit="Seconds"
+     number={status.distance?.seconds ?? 0}
+     textStyle={status.isOverdue ? styles.whiteText : undefined}
+   />
+```
+
+---
 layout: image-right
 transition: slide-left
 image: /assets/dan.png
