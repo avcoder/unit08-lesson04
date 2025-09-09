@@ -20,8 +20,8 @@ mdc: true
 Mobile Development: Unit 08 - Lesson 04
 
 - [ ] Timer, Countdowns
-- [ ] Activity Indicator 
-- [ ] History, Confetti
+- [ ] Confetti, R.N. "fun" packages 
+- [ ] Guest Speaker, R.N. UI frameworks
 
 <div class="abs-br m-6 text-xl">
   <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
