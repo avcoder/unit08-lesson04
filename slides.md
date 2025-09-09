@@ -141,6 +141,38 @@ const date = new Date();       // current date/time
 console.log(date.toISOString());     // "2025-09-08T15:00:00.000Z"
 console.log(date.toLocaleString());  // '9/8/2025, 9:12:41 PM'
 ```
+---
+transition: slide-left
+---
+
+# Intl.DateTimeFormat
+lets you format a Date object based on locale and options like time zone, date style, hour format, etc.
+
+```ts
+// Basic Usage
+const date = new Date(); 
+const formatter = new Intl.DateTimeFormat('en-US'); 
+console.log(formatter.format(date));  // e.g. "9/8/2025"
+
+// Formatting with Locale and Time Zone
+const formatter = new Intl.DateTimeFormat('en-GB', { 
+  timeZone: 'Europe/London',
+  dateStyle: 'full',
+  timeStyle: 'long'
+});
+console.log(formatter.format(new Date()));
+
+// Show only time
+const timeFormatter = new Intl.DateTimeFormat('en-US', {
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+  hour12: false
+});
+console.log(timeFormatter.format(new Date()));  // ex "16:45:22"
+
+```
+
 
 ---
 transition: slide-left
