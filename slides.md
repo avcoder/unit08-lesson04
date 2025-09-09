@@ -291,13 +291,25 @@ transition: slide-left
 
 - `npx expo install react-native-maps`
 - see https://docs.expo.dev/versions/latest/sdk/map-view/
+```tsx
+import MapView from 'react-native-maps';
 
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <MapView style={styles.map} />
+    </View>
+  );
+}
+```
+
+- [Register](https://console.developers.google.com/apis) a Google Cloud API project and enable the Maps SDK
 ---
 transition: slide-left
 ---
 
 # Camera
-Take pictures, selfies, make camera-based games
+Preview device's front or back camera, take photos that are saved to the app's cache
 
 - `npx expo install expo-camera`
 - see https://docs.expo.dev/versions/latest/sdk/camera/
