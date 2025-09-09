@@ -290,6 +290,7 @@ transition: slide-left
 
 # Guest Speaker: Bill Mitchell
 
+- When Bill arrives around 8pm EST, please turn on your cameras
 - check out his work experience: https://www.linkedin.com/in/wkmitch/
 - He has graciously given us 20 to 30 minutes of Q&A
 - Ask him anything 
