@@ -126,7 +126,7 @@ const timestamp = Date.now() + (5 * 1000);
 
 type CountdownStatus = {
   isOverdue: boolean;
-  distance: Duration;
+  distance: Duration; // take a peak at the TS definition for this
 };
 ...
 const [status, setStatus] = useState<CountdownStatus>({
@@ -168,7 +168,7 @@ transition: slide-left
 
 # Exercise: Counter (pg.3)
 
-- Now that we have the logic built for our countdown timer, Build a UI for it so it uses our `TimeSegment` component to display the Seconds left
+- Now that we have the logic built for our countdown timer, Build a UI for it so it uses our `TimeSegment` component to display the Seconds left via `status.distance?.seconds`
    - Re-use the TimeSegment component to additionally display the:
       - minutes left
       - hours left
