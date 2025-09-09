@@ -283,27 +283,7 @@ confettiRef?.current?.start(); // run this perhaps in an onPress handler somewhe
   fadeOut={true}
 />
 ```
----
-transition: slide-left
----
 
-# Maps
-
-- `npx expo install react-native-maps`
-- see https://docs.expo.dev/versions/latest/sdk/map-view/
-```tsx
-import MapView from 'react-native-maps';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <MapView style={styles.map} />
-    </View>
-  );
-}
-```
-
-- [Register](https://console.developers.google.com/apis) a Google Cloud API project and enable the Maps SDK
 ---
 transition: slide-left
 ---
@@ -399,17 +379,50 @@ transition: slide-left
 
 # Media Library Access
 
----
-transition: slide-left
----
+- `npx expo install expo-media-library`
+- see https://docs.expo.dev/versions/latest/sdk/media-library/
+```tsx
+import * as MediaLibrary from 'expo-media-library';
 
-# Face Detection (on photos)
+export default function App() {
+   const [permissionResponse, requestPermission] = MediaLibrary.usePermissions();
+...
+  async function getAlbums() {
+    if (permissionResponse.status !== 'granted') {
+      await requestPermission();
+    }
+    const fetchedAlbums = await MediaLibrary.getAlbumsAsync({
+      includeSmartAlbums: true,
+    });
+    setAlbums(fetchedAlbums);
+  }
+```
 
 ---
 transition: slide-left
 ---
 
 # Speech Recognition & Text-to-Speech
+
+- `npx expo install expo-speech`
+- see https://docs.expo.dev/versions/v52.0.0/sdk/speech/
+
+```tsx
+import * as Speech from 'expo-speech';
+
+export default function App() {
+  const speak = () => {
+    const thingToSay = '1';
+    Speech.speak(thingToSay);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Button title="Press to hear some words" onPress={speak} />
+    </View>
+  );
+}
+```
 
 ---
 transition: slide-left
@@ -436,6 +449,29 @@ transition: slide-left
 ---
 
 # Network Info
+
+---
+transition: slide-left
+---
+
+# Maps
+
+- `npx expo install react-native-maps`
+- see https://docs.expo.dev/versions/latest/sdk/map-view/
+```tsx
+import MapView from 'react-native-maps';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <MapView style={styles.map} />
+    </View>
+  );
+}
+```
+
+- [Register](https://console.developers.google.com/apis) a Google Cloud API project and enable the Maps SDK
+
 
 ---
 transition: slide-left
