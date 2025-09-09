@@ -290,34 +290,6 @@ transition: slide-left
    />
 ```
 
----
-transition: slide-left
----
-
-# Confetti
-react-native-confetti-cannon
-
-- `npx expo install react-native-confetti-cannon`
-- https://www.npmjs.com/package/react-native-confetti-cannon
-
-```tsx
-import { ... Dimensions } from "react-native";
-import { ... useRef } from "react";
-import ConfettiCannon from "react-native-confetti-cannon";
-
-export default function CounterScreen() {
-   const confettiRef = useRef<any>();
-...
-confettiRef?.current?.start(); // run this perhaps in an onPress handler somewhere
-...
-<ConfettiCannon
-  ref={confettiRef}
-  count={50}
-  origin={{ x: Dimensions.get("window").width / 2, y: -30 }}
-  autoStart={false}
-  fadeOut={true}
-/>
-```
 
 ---
 transition: slide-left
@@ -613,6 +585,36 @@ transition: slide-left
    - high-performance lists (superior to FlatList for large data)
 - [lottie-react-native](https://www.npmjs.com/package/lottie-react-native)
    - parses Adobe After Effects animations exported as JSON and renders them natively
+
+---
+transition: slide-left
+---
+
+# Confetti
+react-native-confetti-cannon
+
+- `npx expo install react-native-confetti-cannon`
+- https://www.npmjs.com/package/react-native-confetti-cannon
+
+```tsx
+import { ... Dimensions } from "react-native";
+import { ... useRef } from "react";
+import ConfettiCannon from "react-native-confetti-cannon";
+
+export default function CounterScreen() {
+   const confettiRef = useRef<any>();
+...
+confettiRef?.current?.start(); // run this perhaps in an onPress handler somewhere
+...
+<ConfettiCannon
+  ref={confettiRef}
+  count={50}
+  origin={{ x: Dimensions.get("window").width / 2, y: -30 }}
+  autoStart={false}
+  fadeOut={true}
+/>
+```
+
 
 ---
 layout: image-right
