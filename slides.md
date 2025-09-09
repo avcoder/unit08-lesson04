@@ -262,6 +262,7 @@ transition: slide-left
 # Confetti
 react-native-confetti-cannon
 
+- `npx expo install react-native-confetti-cannon`
 - https://www.npmjs.com/package/react-native-confetti-cannon
 
 ```tsx
@@ -286,10 +287,19 @@ confettiRef?.current?.start(); // run this perhaps in an onPress handler somewhe
 transition: slide-left
 ---
 
+# Maps
+
+- `npx expo install react-native-maps`
+- see https://docs.expo.dev/versions/latest/sdk/map-view/
+
+---
+transition: slide-left
+---
+
 # Camera
 Take pictures, selfies, make camera-based games
 
-- `expo install expo-camera`
+- `npx expo install expo-camera`
 - see https://docs.expo.dev/versions/latest/sdk/camera/
 
 ```tsx
@@ -316,7 +326,7 @@ export default function App() {
 transition: slide-left
 ---
 
-# Compass / Orientation / Sensors / Count your steps
+# Compass / Orientation / Sensors 
 
 - `expo install expo-sensors`
 ```tsx
@@ -436,7 +446,6 @@ transition: slide-left
    - Make a fun camera filter app like Snapchat lenses
 - [react-native-gesture-handler](react-native-gesture-handler)
    - Adds gesture capabilities like swipe, pinch, drag.
-- [react-native-maps](https://www.npmjs.com/package/react-native-maps)
 - [flash-list](https://www.npmjs.com/package/@shopify/flash-list)
    - high-performance lists (superior to FlatList for large data)
 - [lottie-react-native](https://www.npmjs.com/package/lottie-react-native)
