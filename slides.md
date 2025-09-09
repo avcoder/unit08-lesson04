@@ -334,30 +334,7 @@ export default function App() {
 ...
 <CameraView style={styles.camera} facing={facing} />
 ```
----
-transition: slide-left
----
 
-# Compass / Orientation / Sensors 
-
-- `expo install expo-sensors`
-```tsx
-import { Accelerometer } from 'expo-sensors';
-import { useEffect, useState } from 'react';
-
-const useAccelerometer = () => {
-  const [data, setData] = useState({ x: 0, y: 0, z: 0 });
-
-  useEffect(() => {
-    Accelerometer.setUpdateInterval(100);
-    const subscription = Accelerometer.addListener(setData);
-
-    return () => subscription.remove();
-  }, []);
-
-  return data;
-};
-```
 
 ---
 transition: slide-left
@@ -414,11 +391,7 @@ export default function VideoScreen() {
    ...
    onPress={() => { isPlaying ? player.pause() : player.play() }}
 ```
----
-transition: slide-left
----
 
-# Geolocation
 
 ---
 transition: slide-left
@@ -437,6 +410,26 @@ transition: slide-left
 ---
 
 # Speech Recognition & Text-to-Speech
+
+---
+transition: slide-left
+---
+
+# Sensors 
+
+- `npx expo install expo-sensors`
+- See [docs](https://docs.expo.dev/versions/latest/sdk/sensors/) for available sensors:
+   - Accelerometer
+   - Barometer
+   - Device Motion
+   - Gyroscope
+   - Magnetometer
+
+---
+transition: slide-left
+---
+
+# Geolocation
 
 ---
 transition: slide-left
