@@ -444,11 +444,46 @@ transition: slide-left
 
 # Geolocation
 
+- `npx expo install expo-location`
+- see https://docs.expo.dev/versions/latest/sdk/location/
+
+```tsx
+import * as Location from 'expo-location';
+
+export default function App() {
+  const [location, setLocation] = useState<Location.LocationObject | null>(null);
+
+  useEffect(() => {
+    async function getCurrentLocation() {
+      
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    }
+
+    getCurrentLocation();
+  }, []);
+```
 ---
 transition: slide-left
 ---
 
 # Network Info
+Provides access to the device's network such as its IP address, MAC address, and airplane mode status
+
+- `npx expo install expo-network`
+- see https://docs.expo.dev/versions/v52.0.0/sdk/network/
+
+## NetInfo
+allows you to get information about connection type and connection quality.
+
+- `npx expo install @react-native-community/netinfo`
+- see https://docs.expo.dev/versions/v52.0.0/sdk/netinfo/
 
 ---
 transition: slide-left
