@@ -288,6 +288,27 @@ confettiRef?.current?.start(); // run this perhaps in an onPress handler somewhe
 transition: slide-left
 ---
 
+# Status Bar
+
+- `npx expo install expo-status-bar`
+- see https://docs.expo.dev/versions/latest/sdk/status-bar/
+
+```tsx
+import { StatusBar } from 'expo-status-bar';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Notice that the status bar has light text!</Text>
+      <StatusBar style="light" />
+    </View>
+  );
+}
+```
+---
+transition: slide-left
+---
+
 # Camera
 Preview device's front or back camera, take photos that are saved to the app's cache
 
