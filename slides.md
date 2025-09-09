@@ -176,9 +176,9 @@ transition: slide-left
 
 ```tsx
 {!status.isOverdue ? (
-   <Text style={[styles.heading]}>Thing due in</Text>
+   <Text style={[styles.heading]}>Due in</Text>
 ) : (
-   <Text style={[styles.heading, styles.whiteText]}>Thing overdue by</Text>
+   <Text style={[styles.heading, styles.whiteText]}>Overdue by</Text>
 )}
 ...
    <TimeSegment
