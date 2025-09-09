@@ -83,37 +83,6 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Install date-fns
-
-- `npx expo install date-fns`
-   ```tsx
-   import { Text, View, StyleSheet, TextStyle } from "react-native";
-                              // create this in new file: `components/TimeSegment.tsx`
-   type Props = {
-      number: number;
-      unit: string;
-      textStyle?: TextStyle; // ensures we're not using invalid styles
-   };
-
-   export function TimeSegment({ number, unit, textStyle }: Props) {
-      return (
-         <View style={styles.segmentContainer}>
-            <Text style={[styles.number, textStyle]}>{number}</Text>
-            <Text style={textStyle}>{unit}</Text>
-         </View>
-      );
-   }
-
-   const styles = StyleSheet.create({
-      segmentContainer: {}, // fill in whatever styles you want
-      number: {},
-   });
-   ```
-
----
-transition: slide-left
----
-
 # Common ways to calculate time in milliseconds
 
 ```js
@@ -173,6 +142,36 @@ console.log(timeFormatter.format(new Date()));  // ex "16:45:22"
 
 ```
 
+---
+transition: slide-left
+---
+
+# Install date-fns
+
+- `npx expo install date-fns`
+   ```tsx
+   import { Text, View, StyleSheet, TextStyle } from "react-native";
+                              // create this in new file: `components/TimeSegment.tsx`
+   type Props = {
+      number: number;
+      unit: string;
+      textStyle?: TextStyle; // ensures we're not using invalid styles
+   };
+
+   export function TimeSegment({ number, unit, textStyle }: Props) {
+      return (
+         <View style={styles.segmentContainer}>
+            <Text style={[styles.number, textStyle]}>{number}</Text>
+            <Text style={textStyle}>{unit}</Text>
+         </View>
+      );
+   }
+
+   const styles = StyleSheet.create({
+      segmentContainer: {}, // fill in whatever styles you want
+      number: {},
+   });
+   ```
 
 ---
 transition: slide-left
