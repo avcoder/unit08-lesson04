@@ -20,7 +20,7 @@ mdc: true
 Mobile Development: Unit 08 - Lesson 04
 
 - [ ] Timer, Countdowns
-- [ ] Confetti, R.N. "fun" packages 
+- [ ] Confetti, "fun" packages to use camera, 3d orientation, etc
 - [ ] Guest Speaker, R.N. UI frameworks
 
 <div class="abs-br m-6 text-xl">
