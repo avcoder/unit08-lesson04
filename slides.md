@@ -287,7 +287,31 @@ transition: slide-left
 ---
 
 # Camera
+Take pictures, selfies, make camera-based games
 
+- `expo install expo-camera`
+- see https://docs.expo.dev/versions/latest/sdk/camera/
+
+```tsx
+import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
+
+export default function App() {
+  const [facing, setFacing] = useState<CameraType>('back');
+  const [permission, requestPermission] = useCameraPermissions();
+  if (!permission) { return <View /> } // Camera permissions are still loading.
+  if (!permission.granted) {     // Camera permissions are not granted yet.
+    return (
+      <View style={styles.container}>
+        <Text style={styles.message}>We need your permission to show the camera</Text>
+        <Button onPress={requestPermission} title="grant permission" />
+      </View>
+...
+  function toggleCameraFacing() {
+    setFacing(current => (current === 'back' ? 'front' : 'back'));
+  }
+...
+<CameraView style={styles.camera} facing={facing} />
+```
 ---
 transition: slide-left
 ---
@@ -317,8 +341,57 @@ const useAccelerometer = () => {
 transition: slide-left
 ---
 
-# Voice Input / Audio Recording
+# Audio Recording
+Record audio, play sounds.  
 
+- `npx expo install expo-audio`
+- see https://docs.expo.dev/versions/latest/sdk/audio/
+
+```tsx
+// Playing sounds
+import { useAudioPlayer } from 'expo-audio';
+
+const audioSource = require('./assets/Hello.mp3');
+
+export default function App() {
+  const player = useAudioPlayer(audioSource);
+...
+   onPress={() => {
+      player.seekTo(0);
+      player.play();
+   }}
+```
+
+
+---
+transition: slide-left
+---
+
+# Video Recording
+Record and play videos  
+
+- `npx expo install expo-video`
+- see https://docs.expo.dev/versions/latest/sdk/video/
+
+```tsx
+import { useEvent } from 'expo';
+import { useVideoPlayer, VideoView } from 'expo-video';
+
+const videoSource =
+  'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+
+export default function VideoScreen() {
+  const player = useVideoPlayer(videoSource, player => {
+    player.loop = true;
+    player.play();
+  });
+
+  const { isPlaying } = useEvent(player, 'playingChange', { isPlaying: player.playing });
+...
+<VideoView style={styles.video} player={player} allowsFullscreen allowsPictureInPicture />
+   ...
+   onPress={() => { isPlaying ? player.pause() : player.play() }}
+```
 ---
 transition: slide-left
 ---
@@ -422,4 +495,11 @@ transition: slide-left
 # Homework
 
 - Start working on your Mobile Assignment 
+   - Other Project Ideas besides note-app:
+      - Maze Game: Use accelerometer to move a ball around a maze
+      - Compass app: Use magnetometer to show real-time compass direction
+      - Step Counter: Approximate steps based on accelerometer spikes
+      - Build a voice memo app
+      - Make a "soundboard" for sound effects or Build a record & playback feature
+      - Create a photo booth
 - Start working on your Capstone planning project
