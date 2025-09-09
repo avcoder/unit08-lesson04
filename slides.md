@@ -149,6 +149,7 @@ transition: slide-left
 ---
 
 # Install date-fns
+Most popular time packages are moment.js (depracated now) and date-fns
 
 - `npx expo install date-fns`
    ```tsx
@@ -259,7 +260,78 @@ transition: slide-left
 ---
 
 # Confetti
+react-native-confetti-cannon
 
+- https://www.npmjs.com/package/react-native-confetti-cannon
+- Exercise: Install it and use it to make confetti appear
+
+---
+transition: slide-left
+---
+
+# Camera
+
+---
+transition: slide-left
+---
+
+# Compass / Orientation / Sensors / Count your steps
+
+---
+transition: slide-left
+---
+
+# Voice Input / Audio Recording
+
+---
+transition: slide-left
+---
+
+# Geolocation
+
+---
+transition: slide-left
+---
+
+# Media Library Access
+
+---
+transition: slide-left
+---
+
+# Face Detection (on photos)
+
+---
+transition: slide-left
+---
+
+# Speech Recognition & Text-to-Speech
+
+---
+transition: slide-left
+---
+
+# Network Info
+
+---
+transition: slide-left
+---
+
+# 3rd party packages
+
+- [react-native-game-engine](https://www.npmjs.com/package/react-native-game-engine)
+   - Gives you a basic game engine to build simple 2D games.
+   - Create a Flappy Bird or Pong clone
+- [react-native-vision-camera](https://www.npmjs.com/package/react-native-vision-camera)
+   - Access the device camera with superpowers (faster, more extensible).
+   - Make a fun camera filter app like Snapchat lenses
+- [react-native-gesture-handler](react-native-gesture-handler)
+   - Adds gesture capabilities like swipe, pinch, drag.
+- [react-native-maps](https://www.npmjs.com/package/react-native-maps)
+- [flash-list](https://www.npmjs.com/package/@shopify/flash-list)
+   - high-performance lists (superior to FlatList for large data)
+- [lottie-react-native](https://www.npmjs.com/package/lottie-react-native)
+   - parses Adobe After Effects animations exported as JSON and renders them natively
 
 ---
 layout: image-right
