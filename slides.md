@@ -37,6 +37,8 @@ transition: slide-left
 ---
 
 # Recap
+
+- We will have a guest speaker tonight. When Bill arrives around 8pm EST, please turn on your cameras
 - The reason our notification didn't work last time was we forgot [one thing](https://unit08-lesson03.netlify.app/22):
    ```tsx
    if (result === "granted") {
