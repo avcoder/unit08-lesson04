@@ -151,6 +151,38 @@ console.log(timeFormatter.format(new Date()));  // ex "16:45:22"
 transition: slide-left
 ---
 
+# Temporal API
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
+
+```js
+// Importing Temporal from the global object (if supported)
+const { Temporal } = globalThis;
+
+// Get the current date and time
+const now = Temporal.Now.instant();
+console.log(now.toString());
+// e.g. '2025-09-09T13:45:30.123456789Z'
+
+// Add 1 week to the current date
+const nextWeek = today.add({ weeks: 1 });
+console.log(nextWeek.toString());
+// e.g. '2025-09-16'
+
+// Calculate difference between two dates
+const diff = today.since(birthday);
+console.log(diff.toString());
+// e.g. 'P35Y3M25D'  (35 years, 3 months, 25 days)
+
+// Round a time to nearest hour
+const rounded = zonedNow.round({ smallestUnit: 'hour', roundingMode: 'halfExpand' });
+console.log(rounded.toString());
+// e.g. '2025-09-09T10:00-04:00[America/New_York]'
+```
+---
+transition: slide-left
+---
+
 # Install date-fns
 Most popular time packages are moment.js (depracated now) and date-fns
 
